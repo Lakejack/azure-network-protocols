@@ -36,13 +36,18 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 ![Screenshot 2024-09-24 221824](https://github.com/user-attachments/assets/90c4b20d-b8ff-4e32-84bc-d7abe312b426)
 
 
-<p>In the next part of the lab, we will use the "-t" option with the "ping" command and the private IP address of the Linux Virtual Machine. This will start a continuous ping that will run indefinitely until a response is received or manually stopped. While the Windows 10 VM is pinging the Linux VM, we will switch to the Linux VM and block all ICMP traffic through its firewall. This will be done by creating a new Network Security Group on the Linux VM, configured to deny ICMP traffic. As a result, the Linux VM will stop sending echo replies. We can "Allow" ICMP traffic by permitting ICMP in the Linux Network Security Group.</p>
+<p>In the next part of the lab, we will use the "-t" option with the "ping" command and the private IP address of the Linux Virtual Machine. This will start a continuous ping that will run indefinitely until a response is received or manually stopped. While the Windows 10 VM is pinging the Linux VM, we will switch to the Linux VM and block all ICMP traffic through its firewall. This will be done by creating a new Network Security Group on the Linux VM, configured to deny ICMP traffic. As a result, the Linux VM will stop sending echo replies.</p>
 
 
 
 ![Screenshot 2024-09-24 222500](https://github.com/user-attachments/assets/43fff794-d96a-49fb-ac4b-0991c14224dd)
 
 ![image](https://github.com/user-attachments/assets/f5c47158-82d5-44ee-9990-ca770b20bcbf)
+
+
+<p> As shown below, when incoming or inbound ICMP traffic is disabled, the message will display 'Request Timed Out'. To allow ICMP traffic, we can enable it by configuring the Linux Network Security Group. To stop the pings, simply use 'Control-C'.</p>
+
+![image](https://github.com/user-attachments/assets/31316832-57d9-4dae-a76c-7de06d2f60a6)
 
 ![image](https://github.com/user-attachments/assets/533f8a09-0e05-4f29-9e14-eb720d36da20)
 
